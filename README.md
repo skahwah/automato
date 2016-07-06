@@ -28,7 +28,7 @@ Options:
     -a, --all                        Run a bulk of automato's features. Enumerate all domain groups, administrators, computers and user account attributes.
     -c, --domain-users               Get all domain users in the domain.
     -g, --groups                     Get all domain groups for the domain.
-    -m, --member GROUP               List all users in a specified domain group. Make sure yo u escape spaces with a backslash!
+    -m, --member GROUP               List all users in a specified domain group. Make sure you escape spaces with a backslash!
     -t, --attributes                 Get the domain account attributes for all domain users.
     -b, --bad                        Get the bad password count for all domain users.
     -z, --du-hunter USER_FILE        Brute force a list of common usernames with a common password against the target domain.
