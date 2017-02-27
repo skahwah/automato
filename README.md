@@ -1,20 +1,15 @@
 ### automato.rb 
 
-automato is one of the first programs I wrote after taking a ruby course. 
-
 automato should help with automating some of the user-focused enumeration tasks during an internal penetration test.
 
-automato is also capable of conducting limited brute force attacks such as:
+automato is also capable of conducting password guessing attacks, for example, testing to see if a list of users with a common password exists in the target domain
 
-- Testing to see if a list of users with a common password exists in the target domain
-- Identifying if a domain user is a local administrator against machines in the target domain
-
-automato will create outfiles automatically for evidence preservation. 
+automato will create outfiles automatically for evidence preservation.
 
 #### Usage
-
-``` shell
-skawa-mbp:automato $ ruby automato.rb 
+~~~ 
+[17:43][skawa@skawa-mbp:automato] :] ruby automato.rb
+automato.rb v2.0
 Written by: Sanjiv Kawa
 Twitter: @skawasec
 
@@ -29,8 +24,22 @@ Options:
     -c, --domain-users               Get all domain users in the domain.
     -g, --groups                     Get all domain groups for the domain.
     -m, --member GROUP               List all users in a specified domain group. Make sure you escape spaces with a backslash!
+    -s, --user USER                  List all groups that a supplied user is a member of.
+    -r, --priv                       Recurse through the Administrators, DA and EA groups then dump users from all nested groups.
     -t, --attributes                 Get the domain account attributes for all domain users.
     -b, --bad                        Get the bad password count for all domain users.
-    -z, --du-hunter USER_FILE        Brute force a list of common usernames with a common password against the target domain.
-    -l, --la-hunter IP_FILE          Test if a domain user is a local admin against a list of IP addresses with SMB listening in the target domain.
-```
+    -z, --du-hunter USER_FILE        Password spraying attack. Requires a list of usernames and a common password. Currently set to 25 threads.
+[17:43][skawa@skawa-mbp:automato] :]
+~~~
+
+Use the following syntax when conducting a password spraying attack:
+~~~
+[17:43][skawa@skawa-mbp:automato] :] ruby automato.rb -d domain -p password -i 192.168.1.100 -z users.txt
+~~~
+
+I usually use the following command once domain user credentials have been obtained:
+~~~
+[17:43][skawa@skawa-mbp:automato] :] ruby automato.rb -d domain -u user -p password -i 192.168.1.100 -a
+~~~
+
+
