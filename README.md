@@ -32,10 +32,8 @@ Options:
 [17:43][skawa@skawa-mbp:automato] :]
 ~~~
 
-Use the following syntax when conducting a password spraying attack:
-~~~
-[17:43][skawa@skawa-mbp:automato] :] ruby automato.rb -d domain -p password -i 192.168.1.100 -z users.txt
-~~~
+### Password Spraying
+[![asciicast](https://asciinema.org/a/4gckdtj0uiq2vag7mmvhjvlop.png)](https://asciinema.org/a/4gckdtj0uiq2vag7mmvhjvlop)
 
 I usually use the following command once domain user credentials have been obtained:
 ~~~
