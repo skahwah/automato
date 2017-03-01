@@ -28,7 +28,7 @@ end
 
 # This method simply displays the title of the program
 def title()
-  puts "automato.rb v2.0"
+  puts "automato.rb v1.5"
   puts "Written by: Sanjiv Kawa"
   puts "Twitter: @skawasec"
 end
