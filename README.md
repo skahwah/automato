@@ -32,12 +32,14 @@ Options:
 [17:43][skawa@skawa-mbp:automato] :]
 ~~~
 
-### Password Spraying
-[![asciicast](https://asciinema.org/a/4gckdtj0uiq2vag7mmvhjvlop.png)](https://asciinema.org/a/4gckdtj0uiq2vag7mmvhjvlop)
 
 I usually use the following command once domain user credentials have been obtained:
 ~~~
 [17:43][skawa@skawa-mbp:automato] :] ruby automato.rb -d domain -u user -p password -i 192.168.1.100 -a
 ~~~
 
+### Password Spraying
+[![asciicast](https://asciinema.org/a/4gckdtj0uiq2vag7mmvhjvlop.png)](https://asciinema.org/a/4gckdtj0uiq2vag7mmvhjvlop)
 
+### Other uses
+[![asciicast](https://asciinema.org/a/c2yrod2l2soxyvgij0d2jxf8k.png)](https://asciinema.org/a/c2yrod2l2soxyvgij0d2jxf8k)
