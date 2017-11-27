@@ -63,11 +63,15 @@ end
 
 # read content from to file
 def file_to_arr(file)
-  file_arr = Array.new
-  File.open(file).each do |line|
-     file_arr.push line.chomp
+  if File.exist?(file) == true
+    file_arr = Array.new
+    File.open(file).each do |line|
+      file_arr.push line.chomp
+    end
+    return file_arr
+  else
+    abort("[!] EXITING: #{file} does not exist.")
   end
-  return file_arr
 end
 
 # This method will check to see if the IP address for the remote domain controller is responsive.
@@ -273,6 +277,9 @@ def domain_user_bf(dc_ip,domain,password,huntDu)
   puts "\n[+] Success! Results for password spraying the #{domain} domain have been stored in #{output}"
 end
 
+=begin
+This method will connect to a list of remote IP addresses over SMB and enumerate the local administrators
+=end
 def local_admin(domain,username,password,local_admin)
   ip_arr = file_to_arr(local_admin)
   for i in 0 .. ip_arr.length-1
