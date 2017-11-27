@@ -33,10 +33,11 @@ $ ruby automato.rb -a
 ~~~
 
 ### General Use
-[![asciicast](https://asciinema.org/a/KgGBaXEEuGOEO5cvQxVlM1rs7.png)](https://asciinema.org/a/KgGBaXEEuGOEO5cvQxVlM1rs7)
+[![asciicast](https://asciinema.org/a/r2Ir01oNhMkp0mii8WbMcFxBQ.png)](https://asciinema.org/a/r2Ir01oNhMkp0mii8WbMcFxBQ)
 
 ### Password Spraying
-[![asciicast](https://asciinema.org/a/74HrwKGq6gsjuhIpkyrokVAFT.png)](https://asciinema.org/a/74HrwKGq6gsjuhIpkyrokVAFT)
+[![asciicast](https://asciinema.org/a/sVWZ2fVUlfGPV2qmu9Q0WTVcM.png)](https://asciinema.org/a/sVWZ2fVUlfGPV2qmu9Q0WTVcM)
 
 ### Local Administrator Enumeration
-[![asciicast](https://asciinema.org/a/kve2sdSSqGY9MRNo7RfwHAd4b.png)](https://asciinema.org/a/kve2sdSSqGY9MRNo7RfwHAd4b)
+[![asciicast](https://asciinema.org/a/Pxr9MjFpvc5Zg83p72iVxnCFJ.png)](https://asciinema.org/a/Pxr9MjFpvc5Zg83p72iVxnCFJ)
+
