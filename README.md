@@ -36,7 +36,7 @@ $ ruby automato.rb -a
 [![asciicast](https://asciinema.org/a/KgGBaXEEuGOEO5cvQxVlM1rs7.png)](https://asciinema.org/a/KgGBaXEEuGOEO5cvQxVlM1rs7)
 
 ### Password Spraying
-[![asciicast](https://asciinema.org/a/74HrwKGq6gsjuhIpkyrokVAFT.png)](https://https://asciinema.org/a/74HrwKGq6gsjuhIpkyrokVAFT)
+[![asciicast](https://asciinema.org/a/74HrwKGq6gsjuhIpkyrokVAFT.png)](https://asciinema.org/a/74HrwKGq6gsjuhIpkyrokVAFT)
 
 ### Local Administrator Enumeration
 [![asciicast](https://asciinema.org/a/kve2sdSSqGY9MRNo7RfwHAd4b.png)](https://asciinema.org/a/kve2sdSSqGY9MRNo7RfwHAd4b)
