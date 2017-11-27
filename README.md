@@ -26,3 +26,17 @@ Additional Features:
     -l, --local IP_FILE              List members who are local administrators on a remote host. (Requires a list of ip addresses with SMB open.)
     -z, --du-hunter USER_FILE        Password spraying attack. (Requires a list of usernames and a common password.)
 ~~~
+
+I usually use the following command once domain user credentials have been obtained:
+~~~
+$ ruby automato.rb -a
+~~~
+
+### General Use
+[![asciicast](https://asciinema.org/a/KgGBaXEEuGOEO5cvQxVlM1rs7.png)](https://asciinema.org/a/KgGBaXEEuGOEO5cvQxVlM1rs7)
+
+### Password Spraying
+[![asciicast](https://asciinema.org/a/74HrwKGq6gsjuhIpkyrokVAFT.png)](https://https://asciinema.org/a/74HrwKGq6gsjuhIpkyrokVAFT)
+
+### Local Administrator Enumeration
+[![asciicast](https://asciinema.org/a/kve2sdSSqGY9MRNo7RfwHAd4b.png)](https://asciinema.org/a/kve2sdSSqGY9MRNo7RfwHAd4b)
