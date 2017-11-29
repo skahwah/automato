@@ -8,7 +8,7 @@ automato will create outfiles automatically for evidence preservation.
 
 #### Usage
 ~~~
-automato.rb v1.7
+automato.rb v1.7.1
 Written by: Sanjiv Kawa
 Twitter: @hackerjiv
 
