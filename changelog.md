@@ -1,3 +1,7 @@
+# Version 1.7.1
+- Added timestamping for password spraying
+- Added timestamping for bad password count
+
 # Version 1.7
 
 ## Big changes
