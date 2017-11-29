@@ -28,7 +28,7 @@ end
 
 # This method displays the title of the program
 def title()
-  puts "automato.rb v1.7"
+  puts "automato.rb v1.7.1"
   puts "Written by: Sanjiv Kawa"
   puts "Twitter: @hackerjiv"
 end
@@ -224,6 +224,11 @@ def bad_pw(domain,username,password,dc_ip)
   grab_attr(domain,username,password,dc_ip)
   file = "#{domain}-attributes.txt"
   attributes = file_to_arr(file)
+
+  t = Time.now
+  date = t.to_s.split(" ")[0]
+  time = t.to_s.split(" ")[1]
+
   count_arr = []
   for i in 0 .. attributes.length-1
     if attributes[i].include? "User Name"
@@ -233,8 +238,9 @@ def bad_pw(domain,username,password,dc_ip)
       count_arr.push "#{attributes[i].split(":")[1].gsub(/\s+/, "")}"
     end
   end
-  file_name = "#{domain}-bad-password-count.txt"
-  output = File.open(file_name,"a")
+
+  file_name = "#{domain}-bad-password-count-#{date}-#{time}.txt"
+  output = File.open(file_name,"w")
   count_arr.each_slice(2) {|current| output.write(current.join(', ')+"\n")}
   output.close
   puts "[+] Success! The bad password count for all users has been stored in #{file_name}"
@@ -261,7 +267,10 @@ This method will conduct a brute force attack against the taget domain using a u
 The end result is an output file which shows which users have been identified as existing in the domain with the common password.
 =end
 def domain_user_bf(dc_ip,domain,password,huntDu)
-  output = "#{domain}-password-attack-#{password}.txt"
+  t = Time.now
+  date = t.to_s.split(" ")[0]
+  time = t.to_s.split(" ")[1]
+  output = "#{domain}-password-attack-#{password}-#{date}-#{time}.txt"
   user_arr = file_to_arr(huntDu)
   for i in 0 .. user_arr.length-1
     cmd = "smbclient -U \"#{domain}\\#{user_arr[i]}%#{password}\" //#{dc_ip}/NETLOGON -c dir"
