@@ -1,3 +1,6 @@
+# Version 1.7.2
+- Fixed a file write/append issue with attributes and bad password counts
+
 # Version 1.7.1
 - Added timestamping for password spraying
 - Added timestamping for bad password count
