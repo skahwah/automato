@@ -203,19 +203,24 @@ def grab_attr(domain,username,password,dc_ip)
   file = "#{domain}-users.txt"
   domain_users = file_to_arr(file)
 
-  puts "[+] Currently enumerating the attributes for all users in the #{domain} domain"
+  attributes_arr = []
 
-  output = File.open(file_name,"a")
+  puts "[+] Currently enumerating the attributes for all users in the #{domain} domain"
 
   for i in 0 .. domain_users.length-1
     cmd = "rpcclient -U \"#{domain}\\#{username}%#{password}\" #{dc_ip} -c \'queryuser #{domain_users[i]}\'"
-    response = run_cmd(cmd)
-    output.write(response)
-
+    attributes_arr.push run_cmd(cmd)
     math = i.to_f/(domain_users.length-1)*100
     print "#{math.round(2)}% " if math.to_i % 10==0
   end
+
+  output = File.open(file_name,"w")
+
+  for i in 0 .. attributes_arr.length-1
+    output.write(attributes_arr[i].chomp)
+  end
   output.close
+
   puts "\n[+] Success! The attributes for all users has been stored in #{file_name}"
 end
 
