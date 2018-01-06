@@ -8,7 +8,7 @@ require './helpers/cli.rb'
 require './helpers/ldap_querier.rb'
 require './helpers/smb_querier.rb'
 
-puts "automato v2.0"
+puts "automato v2.0.1"
 puts "Written by: Sanjiv Kawa"
 puts "Twitter: @hackerjiv"
 puts ""

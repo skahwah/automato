@@ -15,7 +15,7 @@ class Credentials
   attr_accessor :domain, :dn_base, :username, :password, :ip, :credentials
 
   def initialize
-    yaml_file = "/Users/skawa/proj/local/automato-v2/credentials.yaml"
+    yaml_file = "./credentials.yaml"
     if File.exist?(yaml_file) == false then return end
     config = YAML.load_file(yaml_file)
     @domain = config["config"]["domain"]
