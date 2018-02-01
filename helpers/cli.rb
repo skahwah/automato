@@ -2,7 +2,7 @@
 
 # cli.rb
 # Sanjiv Kawa
-# @hackerjiv
+# @kawabungah
 
 require 'rubygems'
 require './helpers/ldap_querier.rb'

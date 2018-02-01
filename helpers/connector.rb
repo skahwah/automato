@@ -2,7 +2,7 @@
 
 # connector.rb
 # Sanjiv Kawa
-# @hackerjiv
+# @kawabungah
 
 require 'rubygems'
 require 'net/ldap'

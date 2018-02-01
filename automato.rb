@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # automato.rb
 # Sanjiv Kawa
-# @hackerjiv
+# @kawabungah
 
 require './helpers/connector.rb'
 require './helpers/cli.rb'
@@ -10,7 +10,7 @@ require './helpers/smb_querier.rb'
 
 puts "automato v2.0.1"
 puts "Written by: Sanjiv Kawa"
-puts "Twitter: @hackerjiv"
+puts "Twitter: @kawabungah"
 puts ""
 
 Cli.start(ARGV)

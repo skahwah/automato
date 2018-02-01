@@ -2,7 +2,7 @@
 
 # ldap_querier.rb
 # Sanjiv Kawa
-# @hackerjiv
+# @kawabungah
 
 require 'rubygems'
 require 'progressbar'

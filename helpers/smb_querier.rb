@@ -2,7 +2,7 @@
 
 # smb_querier.rb
 # Sanjiv Kawa
-# @hackerjiv
+# @kawabungah
 
 require './helpers/ldap_querier.rb'
 
