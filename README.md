@@ -11,7 +11,7 @@ Output files are automatically created for evidence preservation.
 $ ruby automato.rb
 automato v2.0
 Written by: Sanjiv Kawa
-Twitter: @hackerjiv
+Twitter: @kawabungah
 
 Commands:
   automato.rb all                                          # Run the most popular features. (computers, users, groups, priv, attributes)
