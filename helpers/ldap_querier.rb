@@ -80,15 +80,20 @@ end
 def domain_computers(ldap)
   arr = []
   fqdn = Credentials.new.dn_base.gsub('dc=','.').gsub(',','')
-  search_filter = Net::LDAP::Filter.eq("objectClass", "computer")
-  ldap.search( :filter => search_filter) do |entry|
-    computer = entry.samaccountname
+  filter = Net::LDAP::Filter.eq("samaccountName", "*")
+  filter2 = Net::LDAP::Filter.eq("objectCategory", "computer")
+
+  joined_filter = Net::LDAP::Filter.join(filter, filter2)
+
+  ldap.search( :filter =>joined_filter) do |entry|
+    computer = entry.samaccountName
     arr.push computer.join("\n").to_s.gsub("$",fqdn)
   end
-  return arr
+
   file = "#{$domain}-computers.txt"
   puts "[+] Computers for #{$domain} have been written to #{file}"
   output_file(file,arr)
+  return arr
 end
 
 # list the groups that a supplied user is a member of
