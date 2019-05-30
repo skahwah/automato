@@ -45,6 +45,22 @@ class Connect
     return @@ldap
   end
 
+  def ldaps
+    @@ldap = Net::LDAP.new  :host => @creds.ip,
+    :port => "636",
+    :encryption => {
+        :method => :simple_tls,
+        :tls_options => { :verify_mode => OpenSSL::SSL::VERIFY_NONE }
+    },
+    :base => @creds.dn_base,
+    :auth => {
+      :method => :simple,
+      :username => @creds.credentials,
+      :password => @creds.password
+    }
+    return @@ldap
+  end
+
   # smb client creator
   def smb(domain, username, password, ip)
     sock = TCPSocket.new ip, 445
