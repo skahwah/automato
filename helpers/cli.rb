@@ -9,7 +9,21 @@ require './helpers/ldap_querier.rb'
 require 'thor'
 
 class Cli < Thor
-  @@ldap = Connect.new.ldap
+  yaml_file = "./credentials.yaml"
+  if File.exist?(yaml_file) == false
+    puts "[!] #{yaml_file} does not exist"
+    exit(0)
+  end
+  
+  config = YAML.load_file(yaml_file)
+  ldap = config["config"]["secure_ldap"].to_s.upcase
+
+  if ldap == "TRUE"
+     @@ldap = Connect.new.ldaps
+   else
+    @@ldap = Connect.new.ldap
+  end
+
   @@state = validate_credentials(@@ldap)
 
   desc "all", "Run the most popular features. (computers, users, groups, priv, attributes)"
