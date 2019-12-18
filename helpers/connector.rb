@@ -66,9 +66,13 @@ class Connect
     sock = TCPSocket.new ip, 445
     dispatcher = RubySMB::Dispatcher::Socket.new(sock)
 
-    client = RubySMB::Client.new(dispatcher, smb1: true, smb2: true, domain: domain, username: username, password: password)
-    protocol = client.negotiate
-    status = client.authenticate
+    begin
+      client = RubySMB::Client.new(dispatcher, smb1: true, smb2: true, domain: domain, username: username, password: password)
+      protocol = client.negotiate
+      status = client.authenticate
+    rescue RubySMB::Error::NetBiosSessionService => e
+      puts "[!] Connection failed! Target at #{ip}:445 is SMBv3"
+    end
     return client, ip
   end
 
